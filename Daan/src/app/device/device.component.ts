@@ -49,7 +49,7 @@ export class DeviceComponent implements OnInit {
   }
 
   getDevices(): void {
-    // this.deviceService.getDevices().subscribe(devices => this.devices = devices);
+    this.deviceService.getDevices().subscribe(devices => this.devices = devices);
   }
 
   onRowEditInit(device: Device) {
@@ -59,7 +59,7 @@ export class DeviceComponent implements OnInit {
 
   onRowEditSave(device: Device) {
     delete this.clonedProducts[device.id];
-    // this.deviceService.updateDevice(device).subscribe();
+    this.deviceService.updateDevice(device).subscribe();
     this.messageService.add({severity:'success', summary: 'Success', detail:'Product is updated'});
   }
 
