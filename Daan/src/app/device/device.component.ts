@@ -24,8 +24,6 @@ export class DeviceComponent implements OnInit {
 
   headers: any[];
 
-  status: SelectItem[];
-
   checked: boolean = true;
 
   clonedProducts: { [s: string]: Device; } = {};
@@ -34,7 +32,6 @@ export class DeviceComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDevices();
-    this.status = [{label: 'Y', value: true}, {label: 'N', value: false}];
     this.headers = [
       { field: 'id', header: 'id' },
       { field: 'serialNumber', header: 'serialNumber' },
